@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://de50h8ijixywh"]
+
+[ext_resource type="Script" path="res://objects/jogging.gd" id="1_0sofh"]
+[ext_resource type="PackedScene" uid="uid://dfdglmltorqae" path="res://objects/key_listener.tscn" id="1_hnj0g"]
+[ext_resource type="Texture2D" uid="uid://cuvfmr4gg76mh" path="res://art/flowers.png" id="2_6ht6l"]
+[ext_resource type="PackedScene" uid="uid://coqj034dvvbeu" path="res://objects/level_editor.tscn" id="3_6gp6k"]
+[ext_resource type="Texture2D" uid="uid://d3mianriolnap" path="res://art/white_circle.png" id="4_bu1wu"]
+[ext_resource type="Texture2D" uid="uid://dtycfsqpd1nc5" path="res://art/bob_flowers_pick.png" id="6_d7406"]
+[ext_resource type="Texture2D" uid="uid://bvdrjuks7c338" path="res://art/jogging.png" id="7_l6wrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj1dp"]
+atlas = ExtResource("6_d7406")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xjj5"]
+atlas = ExtResource("6_d7406")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c1nh"]
+atlas = ExtResource("6_d7406")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce52d"]
+atlas = ExtResource("6_d7406")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqitl"]
+atlas = ExtResource("6_d7406")
+region = Rect2(160, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4njb"]
+atlas = ExtResource("6_d7406")
+region = Rect2(176, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3kty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj1dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xjj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c1nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce52d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqitl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4njb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Jogging" type="Node2D"]
+script = ExtResource("1_0sofh")
+
+[node name="Right" parent="." instance=ExtResource("1_hnj0g")]
+z_index = 2
+texture_filter = 1
+position = Vector2(80, 280)
+texture = ExtResource("2_6ht6l")
+frame = 2
+key_name = "right_click"
+
+[node name="Left" parent="." instance=ExtResource("1_hnj0g")]
+z_index = 2
+position = Vector2(-80, 280)
+texture = ExtResource("2_6ht6l")
+key_name = "left_click"
+
+[node name="Circle_left" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+z_index = 2
+position = Vector2(-80, 280)
+texture = ExtResource("4_bu1wu")
+
+[node name="Circle_right" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+z_index = 2
+position = Vector2(80, 280)
+texture = ExtResource("4_bu1wu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LevelEditor" parent="." instance=ExtResource("3_6gp6k")]
+current_level_name = "Jogging"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(80, 240)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_y3kty")
+autoplay = "default"
+frame_progress = 0.760242
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("7_l6wrt")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bft1c603s5qks"
+path="res://.godot/imported/Fastfall (Dustforce OST) - 04 Fifty FPS Forest - Lifeformed.wav-22fc7fedfd5a6e4a58aa28296273cc12.sample"
+
+[deps]
+
+source_file="res://music/Fastfall (Dustforce OST) - 04 Fifty FPS Forest - Lifeformed.wav"
+dest_files=["res://.godot/imported/Fastfall (Dustforce OST) - 04 Fifty FPS Forest - Lifeformed.wav-22fc7fedfd5a6e4a58aa28296273cc12.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

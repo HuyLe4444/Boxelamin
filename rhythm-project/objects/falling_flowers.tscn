@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpcftcyvtslat"]
+
+[ext_resource type="Texture2D" uid="uid://cuvfmr4gg76mh" path="res://art/flowers.png" id="1_5hlb8"]
+[ext_resource type="Script" path="res://objects/FallingFlowers.gd" id="1_fd5te"]
+
+[node name="FallingFlowers" type="Sprite2D"]
+texture = ExtResource("1_5hlb8")
+hframes = 4
+vframes = 3
+frame = 4
+script = ExtResource("1_fd5te")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

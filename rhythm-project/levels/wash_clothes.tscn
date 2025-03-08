@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj8ql8we558l"]
+
+[ext_resource type="Script" path="res://objects/wash_clothes.gd" id="1_i161p"]
+[ext_resource type="Texture2D" uid="uid://tethgvsgx44k" path="res://art/wash clothes - left.png" id="2_fgxno"]
+[ext_resource type="PackedScene" uid="uid://d2qxe5pdd1k3w" path="res://objects/bubble.tscn" id="3_nyl65"]
+
+[node name="WashClothes" type="Node2D"]
+script = ExtResource("1_i161p")
+
+[node name="DisplaySprite" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_fgxno")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -557.0
+offset_top = -187.0
+offset_right = -517.0
+offset_bottom = -164.0
+
+[node name="SpeedLabel" type="Label" parent="."]
+offset_left = -559.0
+offset_top = -223.0
+offset_right = -519.0
+offset_bottom = -200.0
+
+[node name="InstructionLabel" type="Label" parent="."]
+offset_left = -561.0
+offset_top = -283.0
+offset_right = -521.0
+offset_bottom = -260.0
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = -561.0
+offset_top = -303.0
+offset_right = -521.0
+offset_bottom = -280.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Bubble" parent="." instance=ExtResource("3_nyl65")]
+scale = Vector2(0.3, 0.3)

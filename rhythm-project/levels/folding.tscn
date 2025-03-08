@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://t5x468eod52x"]
+
+[ext_resource type="Script" path="res://temp.gd" id="1_8udy5"]
+
+[node name="Folding" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 158.0
+offset_top = 84.0
+offset_right = 566.0
+offset_bottom = 171.0
+script = ExtResource("1_8udy5")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
