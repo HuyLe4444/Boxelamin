@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhsurbcvykuol"]
+
+[ext_resource type="Script" path="res://objects/Tutorial_washi.gd" id="1_o7er7"]
+[ext_resource type="Texture2D" uid="uid://bgfycyt0oqywe" path="res://art/plain_bg.jpg" id="2_rdgn3"]
+[ext_resource type="FontFile" uid="uid://biye2p27hvd1b" path="res://art/Super Bubble.ttf" id="3_jvv3b"]
+
+[node name="Tutorial_washi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o7er7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 342)
+texture = ExtResource("2_rdgn3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -271.0
+offset_right = 522.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvv3b")
+theme_override_font_sizes/font_size = 40
+text = "THIS GAME HAS 3 ROUNDS!
+PRESS THE SPACE KEY CONTINUOUSLY AS FAST AS YOU CAN, THEN ROTATE THE MOUSE IN A CIRCLE.
+REPEAT THIS 3 MORE TIMES!
+
+Press 'Space' To continue "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

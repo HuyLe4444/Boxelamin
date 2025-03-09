@@ -31,7 +31,7 @@ func _on_pressed():
 	GlobalVariables.has_clicked_washing_button = true
 	
 	# Chuyển sang scene khác
-	get_tree().change_scene_to_file("res://levels/wash_clothes.tscn")
+	get_tree().change_scene_to_file("res://objects/tutorial_washi.tscn")
 	
 	# Vô hiệu hóa button để không thể nhấn lại trong phiên chơi hiện tại
 	disabled = true

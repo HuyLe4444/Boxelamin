@@ -31,7 +31,7 @@ func _on_pressed():
 	GlobalVariables.has_clicked_cooking_button = true
 	
 	# Chuyển sang scene khác
-	get_tree().change_scene_to_file("res://levels/cooking.tscn")
+	get_tree().change_scene_to_file("res://objects/Tutorial_cooki.tscn")
 	
 	# Vô hiệu hóa button để không thể nhấn lại trong phiên chơi hiện tại
 	disabled = true

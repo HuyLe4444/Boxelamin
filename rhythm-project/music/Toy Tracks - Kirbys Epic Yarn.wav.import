@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cset4734fvfr2"
+path="res://.godot/imported/Toy Tracks - Kirbys Epic Yarn.wav-026129d57dd7e15a0924aa5eb579e0e0.sample"
+
+[deps]
+
+source_file="res://music/Toy Tracks - Kirbys Epic Yarn.wav"
+dest_files=["res://.godot/imported/Toy Tracks - Kirbys Epic Yarn.wav-026129d57dd7e15a0924aa5eb579e0e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

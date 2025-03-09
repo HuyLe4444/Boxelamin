@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj8ql8we558l"]
+[gd_scene load_steps=6 format=3 uid="uid://cj8ql8we558l"]
 
 [ext_resource type="Script" path="res://objects/wash_clothes.gd" id="1_i161p"]
 [ext_resource type="Texture2D" uid="uid://tethgvsgx44k" path="res://art/wash clothes - left.png" id="2_fgxno"]
 [ext_resource type="FontFile" uid="uid://biye2p27hvd1b" path="res://art/Super Bubble.ttf" id="3_fgfxj"]
 [ext_resource type="PackedScene" uid="uid://d2qxe5pdd1k3w" path="res://objects/bubble.tscn" id="3_nyl65"]
+[ext_resource type="AudioStream" uid="uid://bts4cr24gb8js" path="res://music/nhacgiatdo.wav" id="5_1pexp"]
 
 [node name="WashClothes" type="Node2D"]
 script = ExtResource("1_i161p")
@@ -62,7 +63,13 @@ text = "Time:"
 scale = Vector2(0.3, 0.3)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 73.0
 one_shot = true
+autostart = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1pexp")
+volume_db = -8.092
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
