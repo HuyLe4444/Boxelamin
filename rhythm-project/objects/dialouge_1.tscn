@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6moua0biqlku"]
+
+[ext_resource type="PackedScene" uid="uid://dkxrp61vhrjpu" path="res://objects/dialogue_system.tscn" id="1_c6no1"]
+[ext_resource type="Script" path="res://objects/dialouge_1.gd" id="1_k14b0"]
+
+[node name="Dialouge1" type="Node2D"]
+script = ExtResource("1_k14b0")
+
+[node name="DialogueSystem" parent="." instance=ExtResource("1_c6no1")]
+dialogue_text = "Today is March 8, the International Women's Day, maybe I should help her do all housework before she comes back as a surprise."
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

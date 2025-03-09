@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cxgprtfsc6r8q"]
+[gd_scene load_steps=2 format=3 uid="uid://cxgprtfsc6r8q"]
+
+[ext_resource type="Texture2D" uid="uid://cxp5jc81olkg7" path="res://art/open-door.png" id="1_dqhm6"]
 
 [node name="outro" type="Node2D"]
+
+[node name="Backhome" type="Sprite2D" parent="."]
+position = Vector2(584.833, 363)
+scale = Vector2(0.332407, 0.332407)
+texture = ExtResource("1_dqhm6")

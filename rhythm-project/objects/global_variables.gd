@@ -8,5 +8,6 @@ var has_clicked_jogging_button = false
 
 var finished_count = 0
 
-if finished_count == 4:
-	get_tree().change_scene_to_file("res://levels/game_map.tscn")
+func _process(delta):
+	if finished_count == 4:
+		get_tree().change_scene_to_file("res://objects/outro.tscn")

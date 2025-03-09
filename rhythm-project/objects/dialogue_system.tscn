@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkxrp61vhrjpu"]
+
+[ext_resource type="Script" path="res://objects/DialogueSystem.gd" id="1_yu2gc"]
+[ext_resource type="Texture2D" uid="uid://bgfycyt0oqywe" path="res://art/plain_bg.jpg" id="2_biv52"]
+[ext_resource type="FontFile" uid="uid://biye2p27hvd1b" path="res://art/Super Bubble.ttf" id="3_my7kv"]
+[ext_resource type="Texture2D" uid="uid://bv5yvrni0mn5x" path="res://art/Bob_idle.png" id="4_ru3r5"]
+
+[node name="DialogueSystem" type="CanvasLayer"]
+script = ExtResource("1_yu2gc")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(527, 334)
+texture = ExtResource("2_biv52")
+
+[node name="DialogueBox" type="NinePatchRect" parent="."]
+self_modulate = Color(0.435294, 0.435294, 0.435294, 1)
+anchors_preset = -1
+anchor_left = 0.26
+anchor_top = 0.27
+anchor_right = 0.961
+anchor_bottom = 0.923
+offset_left = -0.52002
+offset_top = 0.0399933
+offset_right = -0.0720215
+offset_bottom = -0.104004
+grow_vertical = 0
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextLabel" type="Label" parent="DialogueBox"]
+layout_mode = 0
+offset_right = 831.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_my7kv")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+uppercase = true
+
+[node name="TypeTimer" type="Timer" parent="."]
+
+[node name="Player" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(169, 271)
+scale = Vector2(15, 15)
+texture = ExtResource("4_ru3r5")
+hframes = 24
+frame = 20
