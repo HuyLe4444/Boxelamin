@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://de50h8ijixywh"]
+[gd_scene load_steps=16 format=3 uid="uid://de50h8ijixywh"]
 
 [ext_resource type="Script" path="res://objects/jogging.gd" id="1_0sofh"]
 [ext_resource type="PackedScene" uid="uid://dfdglmltorqae" path="res://objects/key_listener.tscn" id="1_hnj0g"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3mianriolnap" path="res://art/white_circle.png" id="4_bu1wu"]
 [ext_resource type="Texture2D" uid="uid://dtycfsqpd1nc5" path="res://art/bob_flowers_pick.png" id="6_d7406"]
 [ext_resource type="Texture2D" uid="uid://bvdrjuks7c338" path="res://art/jogging.png" id="7_l6wrt"]
+[ext_resource type="PackedScene" uid="uid://dpc13ucm0i8fg" path="res://levels/game_ui.tscn" id="8_fn1q3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj1dp"]
 atlas = ExtResource("6_d7406")
@@ -105,3 +106,12 @@ frame_progress = 0.760242
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("7_l6wrt")
+
+[node name="GameUI" parent="." instance=ExtResource("8_fn1q3")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

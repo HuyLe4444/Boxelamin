@@ -4,3 +4,4 @@ extends Node2D
 var has_clicked_folding_button = false
 var has_clicked_washing_button = false
 var has_clicked_cooking_button = false
+var has_clicked_jogging_button = false

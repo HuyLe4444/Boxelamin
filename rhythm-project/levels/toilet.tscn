@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://co7qq58vf7ols"]
+[gd_scene load_steps=14 format=3 uid="uid://co7qq58vf7ols"]
 
 [ext_resource type="Texture2D" uid="uid://ca0mb46h8mnok" path="res://art/3_Bathroom_16x16.png" id="1_kbtjw"]
 [ext_resource type="Texture2D" uid="uid://dr17soux1kirp" path="res://art/1_Generic_16x16.png" id="2_b1epa"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cs17kghcqoe7r" path="res://objects/player.tscn" id="4_oynjv"]
 [ext_resource type="Script" path="res://objects/Wash_lead.gd" id="5_2g2lg"]
 [ext_resource type="Script" path="res://objects/Fold_lead.gd" id="6_wlwoa"]
+[ext_resource type="Script" path="res://objects/House_lead.gd" id="7_1uwtg"]
+[ext_resource type="AudioStream" uid="uid://drx25ncbwer1k" path="res://music/Luigi Circuit & Mario Circuit - Mario Kart Wii.wav" id="8_f10ig"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vujrr"]
 texture = ExtResource("1_kbtjw")
@@ -17093,5 +17095,17 @@ offset_bottom = -106.0
 scale = Vector2(8.54545, 8.66531)
 script = ExtResource("6_wlwoa")
 
+[node name="House_lead" type="Button" parent="."]
+offset_left = -20.0
+offset_top = 191.0
+offset_right = 95.0
+offset_bottom = 241.0
+script = ExtResource("7_1uwtg")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_f10ig")
+autoplay = true
+
 [connection signal="pressed" from="Wash_lead" to="Wash_lead" method="_on_pressed"]
 [connection signal="pressed" from="Fold_lead" to="Fold_lead" method="_on_pressed"]
+[connection signal="pressed" from="House_lead" to="House_lead" method="_on_pressed"]

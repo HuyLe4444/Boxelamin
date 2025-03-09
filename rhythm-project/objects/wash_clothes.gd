@@ -126,6 +126,7 @@ func _process_spin_mode(delta):
 			instruction_label.text = "GAME OVER! Điểm số cuối cùng: %d" % score
 			timer_label.text = ""
 			speed_label.text = ""
+			$Timer.start()
 
 func _input(event):
 	if round_count >= max_rounds:
@@ -267,3 +268,6 @@ func _show_points_effect(points):
 	tween.tween_property(points_label, "position", points_label.position - Vector2(0, 50), 1.0)
 	tween.tween_property(points_label, "modulate", Color(1, 1, 1, 0), 0.5)
 	tween.tween_callback(points_label.queue_free)
+
+func _on_timer_timeout():
+	get_tree().change_scene_to_file("res://levels/toilet.tscn")

@@ -27,6 +27,5 @@ func _process(delta):
 	var scale_y = viewport_size.y / texture_size.y
 	$Background.scale = Vector2(scale_x, scale_y)
 
-
 func _on_timer_timeout():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://levels/game_map.tscn")
