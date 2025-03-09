@@ -96,6 +96,7 @@ texture = ExtResource("4_bu1wu")
 current_level_name = "Jogging"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.733333)
 z_index = 1
 texture_filter = 1
 position = Vector2(80, 240)

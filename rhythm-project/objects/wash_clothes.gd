@@ -62,14 +62,14 @@ func _ready():
 	display_sprite.texture = image1
 	
 	# Khởi tạo các nhãn
-	score_label.text = "Điểm: 0"
+	score_label.text = "Score: 0"
 	speed_label.text = ""
-	instruction_label.text = "BẤM PHÍM SPACE LIÊN TỤC!"
-	timer_label.text = "Thời gian: %.1f" % space_press_time
+	instruction_label.text = "PRESS THE SPACE KEY CONTINUOUSLY!"
+	timer_label.text = "Time: %.1f" % space_press_time
 
 func _process(delta):
 	if round_count >= max_rounds:
-		instruction_label.text = "GAME OVER! Điểm số cuối cùng: %d" % score
+		instruction_label.text = "GAME OVER! Final Score: %d" % score
 		timer_label.text = ""
 		speed_label.text = ""
 		return
@@ -90,11 +90,11 @@ func _process_space_mode(delta):
 	
 	# Cập nhật thời gian còn lại
 	var time_left = space_press_time - space_press_timer
-	timer_label.text = "Thời gian: %.1f" % max(0, time_left)
+	timer_label.text = "Time: %.1f" % max(0, time_left)
 	
 	# Hiển thị tần suất bấm phím
 	var press_rate = space_press_count / space_press_timer if space_press_timer > 0 else 0
-	speed_label.text = "Tốc độ: %.1f lần/giây" % press_rate
+	speed_label.text = "Speed: %.1f time/sec" % press_rate
 	
 	# Kiểm tra nếu hết thời gian
 	if space_press_timer >= space_press_time:
@@ -105,14 +105,14 @@ func _process_spin_mode(delta):
 	
 	# Cập nhật thời gian còn lại
 	var time_left = spinning_time - spinning_timer
-	timer_label.text = "Thời gian: %.1f" % max(0, time_left)
+	timer_label.text = "Time: %.1f" % max(0, time_left)
 	
 	# Cập nhật tốc độ xoay
 	if is_spinning:
 		spin_speed_timer += delta
 		if spin_speed_timer >= 0.5:  # Cập nhật tốc độ xoay mỗi 0.5 giây
 			rotation_speed = total_rotation / (2 * PI * spin_speed_timer)
-			speed_label.text = "Tốc độ: %.2f vòng/giây" % rotation_speed
+			speed_label.text = "Speed: %.2f circle/sec" % rotation_speed
 			spin_speed_timer = 0.0
 			total_rotation = 0.0
 	
@@ -123,7 +123,7 @@ func _process_spin_mode(delta):
 			_switch_to_space_mode()
 		else:
 			# Kết thúc game sau 3 vòng
-			instruction_label.text = "GAME OVER! Điểm số cuối cùng: %d" % score
+			instruction_label.text = "GAME OVER! Final Score: %d" % score
 			timer_label.text = ""
 			speed_label.text = ""
 			$Timer.start()
@@ -146,7 +146,7 @@ func _handle_space_input(event):
 			# Tính điểm và thay đổi hình ảnh
 			var points = 10
 			score += points
-			score_label.text = "Điểm: %d" % score
+			score_label.text = "Score: %d" % score
 			
 			# Chuyển đổi hình ảnh
 			current_image = 1 - current_image
@@ -225,7 +225,7 @@ func _complete_rotation():
 		points = int(1000 * rotation_speed_instant)
 	
 	score += points
-	score_label.text = "Điểm: %d" % score
+	score_label.text = "Score: %d" % score
 	
 	# Luân phiên giữa các hình ảnh
 	current_image = 1 - current_image
@@ -238,8 +238,8 @@ func _switch_to_space_mode():
 	current_mode = GameMode.SPACE_PRESS
 	space_press_timer = 0.0
 	space_press_count = 0
-	instruction_label.text = "BẤM PHÍM SPACE LIÊN TỤC!"
-	speed_label.text = "Tốc độ: 0.0 lần/giây"
+	instruction_label.text = "PRESS THE SPACE KEY CONTINUOUSLY!"
+	speed_label.text = "Speed: 0.0 time/sec"
 
 func _switch_to_spin_mode():
 	current_mode = GameMode.SPIN_MOUSE
@@ -247,13 +247,19 @@ func _switch_to_spin_mode():
 	total_rotation = 0.0
 	rotation_count = 0
 	is_spinning = false
-	instruction_label.text = "XOAY CHUỘT THEO HÌNH TRÒN!"
-	speed_label.text = "Tốc độ: 0.0 vòng/giây"
+	instruction_label.text = "ROTATE THE MOUSE IN A CIRCLE!"
+	speed_label.text = "Speed: 0.0 circle/sec"
 
 func _show_points_effect(points):
 	# Tạo nhãn tạm thời hiển thị điểm đã đạt được
 	var points_label = Label.new()
+	var font_size = 30
 	points_label.text = "+%d" % points
+	# Load the font
+	var custom_font = load("res://art/Super Bubble.ttf")
+
+	points_label.add_theme_font_override("font", custom_font)
+	points_label.add_theme_font_size_override("font_size", font_size)
 	
 	if current_mode == GameMode.SPACE_PRESS:
 		points_label.position = display_sprite.global_position - Vector2(20, 20)

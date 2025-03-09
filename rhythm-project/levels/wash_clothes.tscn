@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj8ql8we558l"]
+[gd_scene load_steps=5 format=3 uid="uid://cj8ql8we558l"]
 
 [ext_resource type="Script" path="res://objects/wash_clothes.gd" id="1_i161p"]
 [ext_resource type="Texture2D" uid="uid://tethgvsgx44k" path="res://art/wash clothes - left.png" id="2_fgxno"]
+[ext_resource type="FontFile" uid="uid://biye2p27hvd1b" path="res://art/Super Bubble.ttf" id="3_fgfxj"]
 [ext_resource type="PackedScene" uid="uid://d2qxe5pdd1k3w" path="res://objects/bubble.tscn" id="3_nyl65"]
 
 [node name="WashClothes" type="Node2D"]
@@ -12,28 +13,48 @@ scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_fgxno")
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = -557.0
-offset_top = -187.0
-offset_right = -517.0
-offset_bottom = -164.0
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -560.0
+offset_top = -300.0
+offset_right = -417.0
+offset_bottom = -268.0
+theme_override_fonts/font = ExtResource("3_fgfxj")
+theme_override_font_sizes/font_size = 20
+text = "Score:"
 
 [node name="SpeedLabel" type="Label" parent="."]
-offset_left = -559.0
-offset_top = -223.0
-offset_right = -519.0
-offset_bottom = -200.0
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -560.0
+offset_top = -200.0
+offset_right = -437.0
+offset_bottom = -168.0
+theme_override_fonts/font = ExtResource("3_fgfxj")
+theme_override_font_sizes/font_size = 20
+text = "Speed"
 
 [node name="InstructionLabel" type="Label" parent="."]
-offset_left = -561.0
-offset_top = -283.0
-offset_right = -521.0
-offset_bottom = -260.0
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = -279.0
+offset_right = 138.0
+offset_bottom = -247.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_fgfxj")
+theme_override_font_sizes/font_size = 35
+text = "Instruction"
 
 [node name="TimerLabel" type="Label" parent="."]
-offset_left = -561.0
-offset_top = -303.0
-offset_right = -521.0
-offset_bottom = -280.0
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -560.0
+offset_top = -250.0
+offset_right = -440.0
+offset_bottom = -218.0
+theme_override_fonts/font = ExtResource("3_fgfxj")
+theme_override_font_sizes/font_size = 20
+text = "Time:"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

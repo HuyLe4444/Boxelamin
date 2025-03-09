@@ -15,22 +15,18 @@ glow_blend_mode = 1
 
 [node name="KeyListener" parent="." instance=ExtResource("1_h3xak")]
 position = Vector2(-120, 280)
-key_name = "button_Q"
 
 [node name="KeyListener2" parent="." instance=ExtResource("1_h3xak")]
 position = Vector2(-40, 280)
 frame = 1
-key_name = "button_W"
 
 [node name="KeyListener3" parent="." instance=ExtResource("1_h3xak")]
 position = Vector2(40, 280)
 frame = 2
-key_name = "button_E"
 
 [node name="KeyListener4" parent="." instance=ExtResource("1_h3xak")]
 position = Vector2(120, 280)
 frame = 3
-key_name = "button_R"
 
 [node name="GameUI" parent="." instance=ExtResource("2_l1p8s")]
 

@@ -25,7 +25,7 @@ key_name = "button_Q"
 [node name="GameUI" parent="." instance=ExtResource("3_5anub")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 80.0
+wait_time = 75.0
 one_shot = true
 autostart = true
 

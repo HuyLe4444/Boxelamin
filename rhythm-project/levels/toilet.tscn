@@ -17104,6 +17104,7 @@ script = ExtResource("7_1uwtg")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_f10ig")
+volume_db = -25.686
 autoplay = true
 
 [connection signal="pressed" from="Wash_lead" to="Wash_lead" method="_on_pressed"]
