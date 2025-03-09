@@ -5,3 +5,8 @@ var has_clicked_folding_button = false
 var has_clicked_washing_button = false
 var has_clicked_cooking_button = false
 var has_clicked_jogging_button = false
+
+var finished_count = 0
+
+if finished_count == 4:
+	get_tree().change_scene_to_file("res://levels/game_map.tscn")

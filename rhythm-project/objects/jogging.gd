@@ -28,4 +28,5 @@ func _process(delta):
 	$Background.scale = Vector2(scale_x, scale_y)
 
 func _on_timer_timeout():
+	GlobalVariables.finished_count += 1
 	get_tree().change_scene_to_file("res://levels/game_map.tscn")

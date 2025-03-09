@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://t5x468eod52x"]
+
+[ext_resource type="Script" path="res://objects/folding.gd" id="1_ed6km"]
+[ext_resource type="Texture2D" uid="uid://1pwj7lfyk8wi" path="res://art/stand.png" id="2_eubi7"]
+[ext_resource type="PackedScene" uid="uid://dfdglmltorqae" path="res://objects/key_listener.tscn" id="3_7xyli"]
+[ext_resource type="PackedScene" uid="uid://dpc13ucm0i8fg" path="res://levels/game_ui.tscn" id="4_jjxfn"]
+[ext_resource type="PackedScene" uid="uid://coqj034dvvbeu" path="res://objects/level_editor.tscn" id="5_rl35h"]
+
+[node name="Folding" type="Node2D"]
+script = ExtResource("1_ed6km")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_eubi7")
+
+[node name="KeyListener" parent="." instance=ExtResource("3_7xyli")]
+z_index = 1
+position = Vector2(-500, 280)
+key_name = "button_Q"
+
+[node name="KeyListener2" parent="." instance=ExtResource("3_7xyli")]
+z_index = 1
+position = Vector2(-400, 280)
+frame = 1
+key_name = "button_W"
+
+[node name="KeyListener3" parent="." instance=ExtResource("3_7xyli")]
+z_index = 1
+position = Vector2(-300, 280)
+frame = 3
+key_name = "button_E"
+
+[node name="GameUI" parent="." instance=ExtResource("4_jjxfn")]
+
+[node name="LevelEditor" parent="." instance=ExtResource("5_rl35h")]
+current_level_name = "Folding"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 58.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

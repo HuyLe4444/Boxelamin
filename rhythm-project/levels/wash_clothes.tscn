@@ -63,7 +63,7 @@ text = "Time:"
 scale = Vector2(0.3, 0.3)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 73.0
+wait_time = 75.0
 one_shot = true
 autostart = true
 

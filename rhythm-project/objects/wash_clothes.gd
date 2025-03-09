@@ -328,6 +328,7 @@ var round_count: int = 0
 var max_rounds: int = 3  # Tổng 3 lượt chơi (6 giai đoạn: 3 space + 3 spin + 1 final space)
 
 func _ready():
+	$Timer.start()
 	# Get the viewport size
 	var viewport_size = get_viewport_rect().size
 	
@@ -358,7 +359,6 @@ func _process(delta):
 		instruction_label.text = "GAME OVER! Final Score: %d" % score
 		timer_label.text = ""
 		speed_label.text = ""
-		$Timer.start()
 		return
 		
 	if round_count >= max_rounds and current_mode != GameMode.FINAL_SPACE:
@@ -605,4 +605,5 @@ func _show_points_effect(points):
 	tween.tween_callback(points_label.queue_free)
 
 func _on_timer_timeout():
+	GlobalVariables.finished_count += 1
 	get_tree().change_scene_to_file("res://levels/toilet.tscn")

@@ -31,7 +31,7 @@ func _on_pressed():
 	GlobalVariables.has_clicked_folding_button = true
 	
 	# Chuyển sang scene khác
-	get_tree().change_scene_to_file("res://levels/folding.tscn")
+	get_tree().change_scene_to_file("res://objects/tutorial_foldi.tscn")
 	
 	# Vô hiệu hóa button để không thể nhấn lại trong phiên chơi hiện tại
 	disabled = true
